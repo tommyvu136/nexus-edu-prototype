@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusEdu - AI Learning Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">N</div>
+                <h2>NexusEdu</h2>
+            </div>
+            
+            <div class="role-switcher">
+                <select id="role-select" aria-label="Switch Role">
+                    <option value="student" data-i18n="role.student">Student View</option>
+                    <option value="educator" data-i18n="role.educator">Educator View</option>
+                </select>
+            </div>
+
+            <nav class="sidebar-nav" id="sidebar-nav">
+                <!-- Navigation links injected via JS based on role -->
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" id="nav-think-first" class="nav-item">
+                    <span class="icon"><i data-lucide="lightbulb"></i></span>
+                    <span data-i18n="nav.thinkFirst">Think First Principle</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="app-header">
+                <div class="header-left">
+                    <h1 id="page-title">Dashboard</h1>
+                </div>
+                <div class="header-right" style="display: flex; align-items: center; gap: 16px;">
+                    <select id="lang-select" aria-label="Switch Language" style="padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-main); cursor: pointer; font-family: inherit; font-size: 14px; outline: none; font-weight: 500;">
+                        <option value="vi">🇻🇳 Tiếng Việt</option>
+                        <option value="en">🇬🇧 English</option>
+                    </select>
+                    <div class="trusted-badge">
+                        <span class="shield-icon" style="margin-right: 6px;"><i data-lucide="shield-check" style="width: 18px; height: 18px;"></i></span> <span data-i18n="header.verified">Verified Curriculum</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="avatar" id="header-avatar">ST</div>
+                        <span id="header-username" data-i18n="header.student">Student</span>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dynamic View Container -->
+            <div id="app-root" class="view-container">
+                <!-- Content injected via JS -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="locales.js"></script>
+    <script src="state.js"></script>
+    <script src="views.js"></script>
+    <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
